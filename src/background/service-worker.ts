@@ -14,7 +14,7 @@ import { getStorageData, setStorageData, saveApps, addScanSnapshot } from '../li
 import { sendToTab, createMessage, onMessage } from '../lib/messaging';
 import { mergeDetectedApps, enrichWithDatabaseInfo } from '../lib/detector';
 import { detectRedundancies, calculateTotalMonthlyCost } from '../lib/categorizer';
-import { initLicensing, onPaidListener } from '../lib/licensing';
+import { initLicensing } from '../lib/licensing';
 
 // ============ In-Memory Temporary State ============
 
@@ -345,9 +345,8 @@ chrome.runtime.onInstalled.addListener(async (details) => {
     console.log(`[Shopify App Cost Auditor] Updated to v${manifest.version}`);
   }
 
-  // Initialize licensing (ExtensionPay)
+  // Initialize licensing
   await initLicensing();
-  onPaidListener();
 
   // Set up alarm scheduling on install/update
   await setupAutoScanAlarm();
@@ -357,7 +356,6 @@ chrome.runtime.onInstalled.addListener(async (details) => {
 // Also re-initialize alarm and licensing on service worker startup (in case it was terminated)
 chrome.runtime.onStartup.addListener(async () => {
   await initLicensing();
-  onPaidListener();
   await setupAutoScanAlarm();
 
   // Restore badge state from last known data

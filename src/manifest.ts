@@ -7,7 +7,7 @@ const manifest: ManifestV3Export = {
   description:
     'Scan your Shopify admin to show total app spending, flag redundant apps, and measure JavaScript performance impact.',
   permissions: ['storage', 'alarms', 'activeTab'],
-  host_permissions: ['*://admin.shopify.com/*', '*://*.myshopify.com/*', 'https://extensionpay.com/*'],
+  host_permissions: ['*://admin.shopify.com/*', '*://*.myshopify.com/*'],
   background: {
     service_worker: 'src/background/service-worker.ts',
     type: 'module',

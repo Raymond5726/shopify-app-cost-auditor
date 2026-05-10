@@ -52,14 +52,23 @@ export function AppList({ apps }: AppListProps) {
                 src={app.icon}
                 alt={app.name}
                 className="w-8 h-8 rounded-md flex-shrink-0"
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  img.onerror = null;
+                  img.style.display = 'none';
+                  const fallback = img.nextElementSibling as HTMLElement | null;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
               />
-            ) : (
-              <div className="w-8 h-8 rounded-md bg-shopify-surface flex items-center justify-center flex-shrink-0">
-                <span className="text-xs font-bold text-shopify-text-secondary">
-                  {app.name.charAt(0).toUpperCase()}
-                </span>
-              </div>
-            )}
+            ) : null}
+            <div
+              className="w-8 h-8 rounded-md bg-shopify-surface items-center justify-center flex-shrink-0"
+              style={{ display: app.icon ? 'none' : 'flex' }}
+            >
+              <span className="text-xs font-bold text-shopify-text-secondary">
+                {app.name.charAt(0).toUpperCase()}
+              </span>
+            </div>
 
             {/* App Details */}
             <div className="flex-1 min-w-0">

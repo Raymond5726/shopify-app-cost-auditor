@@ -4,7 +4,6 @@ import type {
   RedundancyGroup,
   AppPerformanceEntry,
   ScanSnapshot,
-  StorageData,
 } from '../types';
 import { CostSummary } from './components/CostSummary';
 import { AppList } from './components/AppList';
@@ -23,6 +22,8 @@ export function Popup() {
   const [isPro, setIsPro] = useState(false);
   const [isScanning, setIsScanning] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
+  const [notifications, setNotifications] = useState(true);
 
   useEffect(() => {
     loadData();
@@ -37,6 +38,7 @@ export function Popup() {
         'isPro',
         'redundancies',
         'performanceEntries',
+        'settings',
       ]);
 
       setApps(result.apps || []);
@@ -45,6 +47,7 @@ export function Popup() {
       setIsPro(result.isPro || false);
       setRedundancies(result.redundancies || []);
       setPerformanceEntries(result.performanceEntries || []);
+      setNotifications(result.settings?.notifications ?? true);
     } catch (error) {
       console.error('Failed to load data from storage:', error);
     } finally {
@@ -72,6 +75,29 @@ export function Popup() {
     }
   }
 
+  async function handleClearData() {
+    await chrome.storage.local.clear();
+    await chrome.storage.local.set({
+      apps: [],
+      lastScanDate: null,
+      scanHistory: [],
+      storeUrl: null,
+      isPro: false,
+      settings: { autoScan: false, scanFrequency: 'weekly', notifications: true },
+    });
+    await loadData();
+    setShowSettings(false);
+  }
+
+  async function handleToggleNotifications() {
+    const newValue = !notifications;
+    setNotifications(newValue);
+    const result = await chrome.storage.local.get('settings');
+    const settings = result.settings || { autoScan: false, scanFrequency: 'weekly', notifications: true };
+    settings.notifications = newValue;
+    await chrome.storage.local.set({ settings });
+  }
+
   const totalCost = apps.reduce((sum, app) => sum + app.monthlyCost, 0);
 
   if (isLoading) {
@@ -80,6 +106,77 @@ export function Popup() {
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-3 border-shopify-green border-t-transparent rounded-full animate-spin" />
           <p className="text-shopify-text-secondary text-sm">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (showSettings) {
+    return (
+      <div className="w-[400px] min-h-[500px] bg-shopify-surface flex flex-col">
+        <header className="bg-shopify-green-dark px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowSettings(false)}
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <h1 className="text-white font-semibold text-base">Settings</h1>
+          </div>
+        </header>
+
+        <div className="flex-1 p-4 space-y-4">
+          {/* Notifications toggle */}
+          <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-shopify-text">Notifications</p>
+                <p className="text-xs text-shopify-text-secondary mt-0.5">
+                  Show badge alerts for redundant apps
+                </p>
+              </div>
+              <button
+                onClick={handleToggleNotifications}
+                className={`relative w-10 h-5 rounded-full transition-colors ${
+                  notifications ? 'bg-shopify-green' : 'bg-gray-300'
+                }`}
+              >
+                <span
+                  className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${
+                    notifications ? 'translate-x-5' : 'translate-x-0.5'
+                  }`}
+                />
+              </button>
+            </div>
+          </div>
+
+          {/* Clear data */}
+          <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4">
+            <p className="text-sm font-medium text-shopify-text">Clear All Data</p>
+            <p className="text-xs text-shopify-text-secondary mt-0.5">
+              Remove all scan history, detected apps, and reset to defaults.
+            </p>
+            <button
+              onClick={handleClearData}
+              className="mt-3 px-4 py-2 text-xs font-medium text-shopify-critical bg-red-50 border border-red-200 rounded-lg hover:bg-red-100 transition-colors"
+            >
+              Clear Data
+            </button>
+          </div>
+
+          {/* About */}
+          <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4">
+            <p className="text-sm font-medium text-shopify-text">About</p>
+            <p className="text-xs text-shopify-text-secondary mt-1">
+              Shopify App Cost Auditor v1.0.0
+            </p>
+            <p className="text-xs text-shopify-text-secondary mt-0.5">
+              Scans your Shopify admin to reveal app costs, flag redundant apps, and grade performance impact.
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -106,6 +203,7 @@ export function Popup() {
           <h1 className="text-white font-semibold text-base">App Cost Auditor</h1>
         </div>
         <button
+          onClick={() => setShowSettings(true)}
           className="text-white/80 hover:text-white transition-colors"
           title="Settings"
         >

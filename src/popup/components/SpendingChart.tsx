@@ -25,24 +25,10 @@ export function SpendingChart({ history }: SpendingChartProps) {
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-      <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
+      <div className="px-4 py-3 border-b border-gray-100">
         <h2 className="text-sm font-semibold text-shopify-text">
           Spending Over Time
         </h2>
-        <span className="flex items-center gap-1 text-[10px] font-medium text-shopify-text-secondary bg-gray-100 px-2 py-0.5 rounded-full">
-          <svg
-            className="w-3 h-3"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-              clipRule="evenodd"
-            />
-          </svg>
-          PRO
-        </span>
       </div>
       <div className="p-4">
         <ResponsiveContainer width="100%" height={160}>

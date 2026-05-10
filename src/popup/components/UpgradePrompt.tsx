@@ -1,23 +1,17 @@
 import React from 'react';
-import { openPaymentPage } from '../../lib/licensing';
 
 export function UpgradePrompt() {
-  async function handleUpgrade() {
-    await openPaymentPage();
-  }
-
   return (
     <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-4 shadow-sm">
-      <h3 className="text-sm font-semibold text-white">Upgrade to Pro</h3>
+      <div className="flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-white">Pro Features</h3>
+        <span className="text-[10px] font-medium text-white/90 bg-white/20 px-2 py-0.5 rounded-full">
+          Coming Soon
+        </span>
+      </div>
       <p className="text-xs text-white/80 mt-1">
-        Unlock automated scanning, detailed analytics, and priority support.
+        Automated scheduled scans, detailed analytics, and more — coming in a future update.
       </p>
-      <button
-        onClick={handleUpgrade}
-        className="mt-3 w-full py-2 px-4 rounded-lg text-sm font-semibold bg-shopify-green hover:bg-shopify-green-dark text-white transition-colors shadow-sm"
-      >
-        Upgrade Now
-      </button>
     </div>
   );
 }
