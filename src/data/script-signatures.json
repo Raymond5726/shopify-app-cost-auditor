@@ -1,0 +1,302 @@
+[
+  {
+    "domain": "static.klaviyo.com",
+    "appName": "Klaviyo",
+    "appHandle": "klaviyo-email-marketing"
+  },
+  {
+    "domain": "a.klaviyo.com",
+    "appName": "Klaviyo",
+    "appHandle": "klaviyo-email-marketing"
+  },
+  {
+    "domain": "cdn.judge.me",
+    "appName": "Judge.me",
+    "appHandle": "judge-me"
+  },
+  {
+    "domain": "judgeme.imgix.net",
+    "appName": "Judge.me",
+    "appHandle": "judge-me"
+  },
+  {
+    "domain": "loox.io",
+    "appName": "Loox",
+    "appHandle": "loox"
+  },
+  {
+    "domain": "cdn.loox.io",
+    "appName": "Loox",
+    "appHandle": "loox"
+  },
+  {
+    "domain": "staticw2.yotpo.com",
+    "appName": "Yotpo",
+    "appHandle": "yotpo-social-reviews"
+  },
+  {
+    "domain": "cdn-widgetsrepository.yotpo.com",
+    "appName": "Yotpo",
+    "appHandle": "yotpo-social-reviews"
+  },
+  {
+    "domain": "code.tidio.co",
+    "appName": "Tidio",
+    "appHandle": "tidio-live-chat"
+  },
+  {
+    "domain": "widget-v4.tidiochat.com",
+    "appName": "Tidio",
+    "appHandle": "tidio-live-chat"
+  },
+  {
+    "domain": "static.hotjar.com",
+    "appName": "Hotjar",
+    "appHandle": "hotjar"
+  },
+  {
+    "domain": "script.hotjar.com",
+    "appName": "Hotjar",
+    "appHandle": "hotjar"
+  },
+  {
+    "domain": "d10lpsik1i8c69.cloudfront.net",
+    "appName": "Lucky Orange",
+    "appHandle": "lucky-orange"
+  },
+  {
+    "domain": "cdn.luckyorange.com",
+    "appName": "Lucky Orange",
+    "appHandle": "lucky-orange"
+  },
+  {
+    "domain": "widget.privy.com",
+    "appName": "Privy",
+    "appHandle": "privy"
+  },
+  {
+    "domain": "cdn.privy.com",
+    "appName": "Privy",
+    "appHandle": "privy"
+  },
+  {
+    "domain": "cdn.justuno.com",
+    "appName": "Justuno",
+    "appHandle": "justuno"
+  },
+  {
+    "domain": "js.justuno.com",
+    "appName": "Justuno",
+    "appHandle": "justuno"
+  },
+  {
+    "domain": "cdn.optimonk.com",
+    "appName": "OptiMonk",
+    "appHandle": "optimonk"
+  },
+  {
+    "domain": "front.optimonk.com",
+    "appName": "OptiMonk",
+    "appHandle": "optimonk"
+  },
+  {
+    "domain": "js.smile.io",
+    "appName": "Smile.io",
+    "appHandle": "smile-io"
+  },
+  {
+    "domain": "cdn.smile.io",
+    "appName": "Smile.io",
+    "appHandle": "smile-io"
+  },
+  {
+    "domain": "sdk.loyaltylion.net",
+    "appName": "LoyaltyLion",
+    "appHandle": "loyaltylion"
+  },
+  {
+    "domain": "cdn.loyaltylion.net",
+    "appName": "LoyaltyLion",
+    "appHandle": "loyaltylion"
+  },
+  {
+    "domain": "static.rechargecdn.com",
+    "appName": "Recharge",
+    "appHandle": "recharge"
+  },
+  {
+    "domain": "config.gorgias.chat",
+    "appName": "Gorgias",
+    "appHandle": "gorgias"
+  },
+  {
+    "domain": "cdn.gorgias.chat",
+    "appName": "Gorgias",
+    "appHandle": "gorgias"
+  },
+  {
+    "domain": "cdn.pagefly.io",
+    "appName": "PageFly",
+    "appHandle": "pagefly"
+  },
+  {
+    "domain": "lib.getshogun.com",
+    "appName": "Shogun",
+    "appHandle": "shogun"
+  },
+  {
+    "domain": "cdn.gempages.net",
+    "appName": "GemPages",
+    "appHandle": "gempages"
+  },
+  {
+    "domain": "omnisnippet1.com",
+    "appName": "Omnisend",
+    "appHandle": "omnisend"
+  },
+  {
+    "domain": "cdn.reconvert.io",
+    "appName": "ReConvert",
+    "appHandle": "reconvert-upsell-cross-sell"
+  },
+  {
+    "domain": "cdn.aftership.com",
+    "appName": "AfterShip",
+    "appHandle": "aftership"
+  },
+  {
+    "domain": "button.aftership.com",
+    "appName": "AfterShip",
+    "appHandle": "aftership"
+  },
+  {
+    "domain": "cdn.weglot.com",
+    "appName": "Weglot",
+    "appHandle": "weglot"
+  },
+  {
+    "domain": "cdn.langify-app.com",
+    "appName": "Langify",
+    "appHandle": "langify"
+  },
+  {
+    "domain": "tag.getdrip.com",
+    "appName": "Drip",
+    "appHandle": "drip"
+  },
+  {
+    "domain": "cdn.triplewhale.com",
+    "appName": "Triple Whale",
+    "appHandle": "triple-whale"
+  },
+  {
+    "domain": "sdk.postscript.io",
+    "appName": "Postscript",
+    "appHandle": "postscript"
+  },
+  {
+    "domain": "cdn.postscript.io",
+    "appName": "Postscript",
+    "appHandle": "postscript"
+  },
+  {
+    "domain": "cdn.smsbump.com",
+    "appName": "SMSBump (Yotpo)",
+    "appHandle": "sms-bump"
+  },
+  {
+    "domain": "cdn.growave.io",
+    "appName": "Growave",
+    "appHandle": "growave"
+  },
+  {
+    "domain": "cdn.stamped.io",
+    "appName": "Stamped",
+    "appHandle": "stamped-io"
+  },
+  {
+    "domain": "cdn1.stamped.io",
+    "appName": "Stamped",
+    "appHandle": "stamped-io"
+  },
+  {
+    "domain": "cdn.okendo.io",
+    "appName": "Okendo",
+    "appHandle": "okendo-reviews"
+  },
+  {
+    "domain": "static.zdassets.com",
+    "appName": "Zendesk",
+    "appHandle": "zendesk"
+  },
+  {
+    "domain": "cdn.reamaze.com",
+    "appName": "Re:amaze",
+    "appHandle": "reamaze"
+  },
+  {
+    "domain": "connect.facebook.net",
+    "appName": "Facebook & Instagram",
+    "appHandle": "facebook-channel"
+  },
+  {
+    "domain": "cdn.shopify.com/shopifycloud/shopify-chat",
+    "appName": "Shopify Inbox",
+    "appHandle": "shopify-inbox"
+  },
+  {
+    "domain": "cdn.vitals.co",
+    "appName": "Vitals",
+    "appHandle": "vitals"
+  },
+  {
+    "domain": "swymrelay.com",
+    "appName": "Wishlist Plus",
+    "appHandle": "wishlist-plus"
+  },
+  {
+    "domain": "cdn.recart.com",
+    "appName": "Recart",
+    "appHandle": "recart"
+  },
+  {
+    "domain": "cdn.backinstock.org",
+    "appName": "Back In Stock",
+    "appHandle": "back-in-stock"
+  },
+  {
+    "domain": "bold-upsell.boldapps.net",
+    "appName": "Bold Upsell",
+    "appHandle": "bold-upsell"
+  },
+  {
+    "domain": "bold-subscriptions.boldapps.net",
+    "appName": "Bold Subscriptions",
+    "appHandle": "bold-subscriptions"
+  },
+  {
+    "domain": "cdn.wheelio-widget.com",
+    "appName": "Wheelio",
+    "appHandle": "wheelio"
+  },
+  {
+    "domain": "cdn.instafeedapp.com",
+    "appName": "Instafeed",
+    "appHandle": "instafeed"
+  },
+  {
+    "domain": "cdn.sealsubscriptions.com",
+    "appName": "Seal Subscriptions",
+    "appHandle": "seal-subscriptions"
+  },
+  {
+    "domain": "cdn.loopreturns.com",
+    "appName": "Loop Returns",
+    "appHandle": "loop-returns"
+  },
+  {
+    "domain": "cdn.returnly.com",
+    "appName": "Returnly",
+    "appHandle": "returnly"
+  }
+]

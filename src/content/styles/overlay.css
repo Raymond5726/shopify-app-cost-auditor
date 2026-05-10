@@ -1,0 +1,83 @@
+/*
+ * Shopify App Cost Auditor - Overlay Styles
+ *
+ * Minimal structural CSS for content script UI overlays.
+ * Uses a unique prefix (shopify-auditor-) to avoid style conflicts
+ * with Shopify's admin and storefront stylesheets.
+ */
+
+.shopify-auditor-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.shopify-auditor-overlay--active {
+  pointer-events: auto;
+}
+
+.shopify-auditor-badge {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2147483646;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 12px;
+  background-color: #5c6ac4;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.shopify-auditor-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.shopify-auditor-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  max-width: 280px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.shopify-auditor-tooltip--visible {
+  opacity: 1;
+}
+
+.shopify-auditor-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #1a1a1a;
+  transform: translateX(-50%) rotate(45deg);
+}

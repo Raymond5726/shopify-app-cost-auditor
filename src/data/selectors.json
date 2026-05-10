@@ -1,0 +1,27 @@
+{
+  "appListPage": {
+    "appCard": "[data-app-card], [role=\"listitem\"][data-testid*=\"app\"], .Polaris-ResourceItem, [aria-label*=\"app\"] [role=\"listitem\"]",
+    "appName": "[data-app-name], [role=\"heading\"], [data-testid=\"app-name\"], .Polaris-ResourceItem__Content h2, [aria-label*=\"app-name\"]",
+    "appIcon": "[data-app-icon] img, [role=\"listitem\"] img[alt], [data-testid=\"app-icon\"], .Polaris-Avatar img",
+    "appStatus": "[data-testid=\"app-status\"], [aria-label*=\"status\"], [data-app-status], .Polaris-Badge"
+  },
+  "billingPage": {
+    "subscriptionRow": "[data-testid*=\"subscription\"], [role=\"row\"][aria-label*=\"subscription\"], [data-testid*=\"billing-item\"], table[aria-label*=\"billing\"] tbody tr, [role=\"listitem\"][data-testid*=\"charge\"]",
+    "appName": "[data-testid=\"subscription-name\"], [role=\"row\"] [data-testid=\"app-name\"], td:first-child [data-testid*=\"name\"], [aria-label*=\"app name\"]",
+    "amount": "[data-testid=\"subscription-amount\"], [data-testid*=\"price\"], [aria-label*=\"amount\"], [role=\"cell\"][data-testid*=\"cost\"], td[data-testid*=\"amount\"]",
+    "billingCycle": "[data-testid=\"billing-cycle\"], [aria-label*=\"billing cycle\"], [data-testid*=\"interval\"], [role=\"cell\"][data-testid*=\"cycle\"]"
+  },
+  "planPage": {
+    "appCharge": "[data-testid*=\"app-charge\"], [role=\"listitem\"][aria-label*=\"charge\"], [data-testid*=\"recurring-charge\"], section[aria-label*=\"charges\"] [role=\"listitem\"]",
+    "appName": "[data-testid=\"charge-app-name\"], [role=\"listitem\"] [data-testid*=\"name\"], [aria-label*=\"app\"] [role=\"heading\"]",
+    "amount": "[data-testid=\"charge-amount\"], [aria-label*=\"charge amount\"], [role=\"listitem\"] [data-testid*=\"price\"], [data-testid*=\"charge-cost\"]"
+  },
+  "common": {
+    "polarisBadge": "[class*=\"Polaris-Badge\"], [role=\"status\"]",
+    "polarisCard": "[class*=\"Polaris-Card\"], [class*=\"Polaris-LegacyCard\"], section[role=\"region\"]",
+    "pricePattern": "\\$[0-9]+\\.?[0-9]*(/mo| per month| monthly| /month)",
+    "appStoreLink": "a[href*=\"apps.shopify.com\"], a[href*=\"/admin/apps/\"]",
+    "navigationApps": "a[href*=\"/admin/apps\"][role=\"link\"], nav [aria-label*=\"Apps\"]",
+    "navigationBilling": "a[href*=\"/admin/settings/billing\"][role=\"link\"], nav [aria-label*=\"Billing\"]"
+  }
+}
